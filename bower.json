@@ -1,7 +1,7 @@
 {
   "name": "ds-js-core",
   "description": "A core JavaScript library for model layer development",
-  "main": "index.js",
+  "main": "DS.js",
   "authors": [
     "Dan Shelly"
   ],
@@ -12,9 +12,7 @@
   ],
   "homepage": "https://github.com/infradust/DSJSCore",
   "moduleType": [
-    "amd",
-    "globals",
-    "node"
+    "globals"
   ],
   "private": true,
   "ignore": [
