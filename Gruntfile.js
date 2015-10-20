@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 			},
 			core:{
 				files:{
-					'<%= d.pmin %>':['<%= d.src %>DS.js','<%= d.src %>data.js'],
+					'<%= d.pmin %>':['<%= d.src %>dscore.js','<%= d.src %>dsdata.js','<%= d.src %>oo.js','<%= d.src %>patterns.js'],
 				}
 			},
 		},
