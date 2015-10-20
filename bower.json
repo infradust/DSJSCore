@@ -1,7 +1,7 @@
 {
   "name": "ds-js-core",
   "description": "A core JavaScript library for model layer development",
-  "main": "DS.js",
+  "main": ["src/dscore.js","src/dsdata.js","src/oo.js","src/patterns.js"],
   "authors": [
     "Dan Shelly"
   ],
