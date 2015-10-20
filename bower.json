@@ -1,7 +1,7 @@
 {
   "name": "ds-js-core",
   "description": "A core JavaScript library for model layer development",
-  "main": ["out/DS.min.js"],
+  "main": ["out/min/DS.min.js"],
   "authors": [
     "Dan Shelly"
   ],
