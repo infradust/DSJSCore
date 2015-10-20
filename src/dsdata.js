@@ -2,8 +2,7 @@
 	
 
 var d = DS.namespace('data');
-var c = undefined;
-var p = undefined;
+var c,p;
 
 /******************************************************************************/
 /**
@@ -65,8 +64,6 @@ c = DS.makeClass({
 	name:'DSDataObject',
 	namespace:d,
 	cnst:function(data) {
-		var cls = this.constructor;
-		var self = this;
 		this.$flags = {};
 		this.$values = {};
 		this.$changes = {};
@@ -102,8 +99,7 @@ c = DS.makeClass({
 			}
 		};
 		this.$addProperty = function (prop) {
-			var existing = self.$properties[prop.key];
-			if (existin === undefined) {
+			if (self.$properties[prop.key] === undefined) {
 				self.$properties[prop.key] = prop;
 				prop.setAccessor(self.prototype);
 			} else {
@@ -173,7 +169,7 @@ p.$undo = function () {
 		var p = this.$_propForKey(k);
 		p.undo(this);
 	}
-}
+};
 
 p.$access = function() {
 	var acc = this[arguments[0]];
@@ -239,7 +235,6 @@ p.setupAccessor = function (a) {
 };
 
 p.setAccessor = function (inst) {
-	var self = this;
 	if (inst.hasOwnProperty(this.name)) {
 		console.log('property: ',p,'will override accessor named:',p.name,'instance:',inst);
 	}
@@ -264,7 +259,7 @@ p._willChange = function (inst,old,value) {
 	} else {
 		inst.$changes[this.key] = old;
 	}
-}
+};
 
 p.setPersistent = function(inst,value){
 	if (inst.$changes.hasOwnProperty(this.key)) {
@@ -278,7 +273,7 @@ p.setPersistent = function(inst,value){
 	} else {
 		this._set(inst,value);
 	}
-}
+};
 
 p.set = function (inst,value) {
 	var old = inst.$values[this.key];

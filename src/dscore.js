@@ -1,5 +1,5 @@
 (function(exports){
-
+'use strict';
 var DS = {};
 
 DS.nop = function (){};
@@ -49,9 +49,9 @@ DS.makeClass = function (data) {
 			};
 		}
 	} else {
-		var cnst = cls;
+		var cnst_ = cls;
 		cls = function () {
-			var res = cnst.apply(this,arguments) || this;
+			var res = cnst_.apply(this,arguments) || this;
 			return res;	
 		};	
 	}
@@ -100,7 +100,7 @@ DS.unregisterClass = function(key) {
 
 DS.namespace = function (name) {
 	var res = DS[name];
-	if (res == undefined) {
+	if (res === undefined) {
 		res = {};
 		res._isNamespace = true;
 		DS[name] = res;
