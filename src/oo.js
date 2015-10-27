@@ -78,6 +78,7 @@ DS.makeClass({
 			var r = c[this.cacheKey(key)];
 			if (r === undefined) {
 				r = new this(data);
+				c[this.cacheKey(key)] = r;
 			}
 			return r;
 		};
